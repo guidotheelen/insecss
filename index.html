@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ladybug</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ladybug {
+    position: relative;
+    width: 220px;
+    height: 180px;
+  }
+
+  .wing {
+    position: absolute;
+    width: 100px;
+    height: 140px;
+    background: radial-gradient(circle at 70% 30%, #ff5555 0%, #d40000 80%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+
+  .wing.left {
+    left: 10px;
+    transform: rotate(-10deg);
+  }
+
+  .wing.right {
+    right: 10px;
+    transform: rotate(10deg);
+  }
+
+  .wing::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  }
+
+  .head {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 60px;
+    background: #000;
+    border-radius: 50% 50% 40% 40%;
+  }
+
+  .head::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 30%, #333 0%, #000 70%);
+  }
+
+  .eye {
+    position: absolute;
+    top: 18px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .eye.left { left: 20px; }
+  .eye.right { right: 20px; }
+
+  .eye::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+  }
+
+  .line {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 4px;
+    height: 150px;
+    background: #000;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .spot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #444 0%, #000 80%);
+    border-radius: 50%;
+  }
+
+  .spot1 { top: 40px; left: 40px; }
+  .spot2 { top: 80px; left: 60px; }
+  .spot3 { top: 40px; right: 40px; }
+  .spot4 { top: 80px; right: 60px; }
+  .spot5 { top: 110px; left: 90px; }
+  .spot6 { top: 110px; right: 90px; }
+
+  .leg {
+    position: absolute;
+    bottom: -10px;
+    width: 40px;
+    height: 6px;
+    background: #000;
+    transform-origin: left center;
+  }
+
+  .leg1 { left: 20px; transform: rotate(20deg); }
+  .leg2 { left: 20px; bottom: -4px; transform: rotate(0deg); }
+  .leg3 { left: 20px; bottom: 2px; transform: rotate(-20deg); }
+  .leg4 { right: 20px; transform: rotate(-20deg); }
+  .leg5 { right: 20px; bottom: -4px; transform: rotate(0deg); }
+  .leg6 { right: 20px; bottom: 2px; transform: rotate(20deg); }
+
+  .latin-name {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+  <div class="ladybug">
+    <div class="wing left"></div>
+    <div class="wing right"></div>
+    <div class="head">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+    </div>
+    <div class="line"></div>
+    <div class="spot spot1"></div>
+    <div class="spot spot2"></div>
+    <div class="spot spot3"></div>
+    <div class="spot spot4"></div>
+    <div class="spot spot5"></div>
+    <div class="spot spot6"></div>
+    <div class="leg leg1"></div>
+    <div class="leg leg2"></div>
+    <div class="leg leg3"></div>
+    <div class="leg leg4"></div>
+    <div class="leg leg5"></div>
+    <div class="leg leg6"></div>
+  </div>
+  <p class="latin-name">Coccinella septempunctata</p>
+</body>
+</html>

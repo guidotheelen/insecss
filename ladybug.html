@@ -26,8 +26,14 @@
     position: absolute;
     width: 100px;
     height: 140px;
-    background: radial-gradient(circle at 70% 30%, #ff5555 0%, #d40000 80%);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: radial-gradient(circle at 70% 30%, #ff5555 0%, #c10000 80%);
+    border-radius: 50% / 60% 48% 38% 40%;
+    box-shadow: inset 0.3em 0.1em 0.2em -0.2em #af2a2a,
+                inset 0.3em -0.3em 0.2em -0.2em #bf2a2a,
+                inset 0.9em -0.8em 1em -0.1em #ea5555,
+                inset 0.3em 0.1em 0.8em -0.3em #ef5555,
+                -0.2em 0em 0.2em -0.1em #ffe0cf,
+                -0.5em -0.1em 0.2em -0.1em #f3a39a;
   }
 
   .wing.left {
@@ -51,6 +57,17 @@
     background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
   }
 
+  .wing::after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    left: 63%;
+    width: 16%;
+    height: 14%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.76), rgba(255,255,255,0) 65%);
+    transform: rotate(-36deg);
+  }
+
   .head {
     position: absolute;
     top: -30px;
@@ -60,6 +77,23 @@
     height: 60px;
     background: #000;
     border-radius: 50% 50% 40% 40%;
+  }
+
+  .head::before {
+    content: "";
+    position: absolute;
+    bottom: 6%;
+    left: 32%;
+    width: 32%;
+    height: 28%;
+    border-radius: 50% / 60% 48% 38% 40%;
+    background: #f6c1aa;
+    box-shadow: inset 0.3em 0.1em 0.2em -0.2em #af6a61,
+                inset 0.3em -0.3em 0.2em -0.2em #bf6b61,
+                inset 0.9em -0.8em 1em -0.1em #ea997c,
+                inset 0.3em 0.1em 0.8em -0.3em #ef8b8b,
+                -0.2em 0em 0.2em -0.1em #ffe0cf,
+                -0.5em -0.1em 0.2em -0.1em #f3a39a;
   }
 
   .head::after {
@@ -85,6 +119,33 @@
 
   .eye.left { left: 20px; }
   .eye.right { right: 20px; }
+
+  .nostril {
+    position: absolute;
+    bottom: 10%;
+    width: 18%;
+    height: 5%;
+    border-radius: 50% / 60% 60% 36% 37%;
+    background-image: linear-gradient(180deg, #ffe8e8, #ecb09d 58%);
+    color: #a35050;
+    box-shadow: inset 0em 0.5em 0.3em -0.3em #5e0303,
+                -0.4em -0.1em 0.3em -0.1em,
+                0.2em -0.1em 0.3em 0em,
+                0 0.2em 0.2em 0.1em #e9b695;
+  }
+
+  .nostril.left { left: 28%; transform: rotate(-10deg); }
+  .nostril.right { right: 28%; transform: rotate(10deg); }
+
+  .ala-shine {
+    position: absolute;
+    bottom: 20%;
+    left: 63%;
+    width: 16%;
+    height: 14%;
+    background: radial-gradient(ellipse, #ffffffc2, #ffffff00 65%);
+    transform: rotate(-36deg);
+  }
 
   .eye::after {
     content: "";
@@ -154,6 +215,9 @@
     <div class="head">
       <div class="eye left"></div>
       <div class="eye right"></div>
+      <div class="nostril left"></div>
+      <div class="nostril right"></div>
+      <div class="ala-shine"></div>
     </div>
     <div class="line"></div>
     <div class="spot spot1"></div>
